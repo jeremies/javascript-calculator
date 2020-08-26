@@ -6,8 +6,8 @@ class Screen extends React.Component {
   render() {
     return (
       <div id="screen">
-        <div id="expression"></div>
-        <div id="display"></div>
+        <div id="expression">{this.props.expression}</div>
+        <div id="display">{this.props.display}</div>
       </div>
     );
   }
@@ -160,13 +160,17 @@ class ButtonBank extends React.Component {
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { display: "0", expression: "" };
   }
 
   render() {
     return (
       <div>
         <div class="calculator">
-          <Screen />
+          <Screen
+            display={this.state.display}
+            expression={this.state.expression}
+          />
           <ButtonBank />
         </div>
         <div class="footer">

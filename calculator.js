@@ -21,8 +21,16 @@ var Screen = function (_React$Component) {
       return React.createElement(
         "div",
         { id: "screen" },
-        React.createElement("div", { id: "expression" }),
-        React.createElement("div", { id: "display" })
+        React.createElement(
+          "div",
+          { id: "expression" },
+          this.props.expression
+        ),
+        React.createElement(
+          "div",
+          { id: "display" },
+          this.props.display
+        )
       );
     }
   }]);
@@ -278,7 +286,10 @@ var Calculator = function (_React$Component8) {
   function Calculator(props) {
     _classCallCheck(this, Calculator);
 
-    return _possibleConstructorReturn(this, (Calculator.__proto__ || Object.getPrototypeOf(Calculator)).call(this, props));
+    var _this8 = _possibleConstructorReturn(this, (Calculator.__proto__ || Object.getPrototypeOf(Calculator)).call(this, props));
+
+    _this8.state = { display: "0", expression: "" };
+    return _this8;
   }
 
   _createClass(Calculator, [{
@@ -290,7 +301,10 @@ var Calculator = function (_React$Component8) {
         React.createElement(
           "div",
           { "class": "calculator" },
-          React.createElement(Screen, null),
+          React.createElement(Screen, {
+            display: this.state.display,
+            expression: this.state.expression
+          }),
           React.createElement(ButtonBank, null)
         ),
         React.createElement(
