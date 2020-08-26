@@ -1,5 +1,5 @@
 body {
-  background: #292f2f;
+  background: #6f7979;
   font: normal bold 15px "Roboto Mono", monospace;
 }
 
@@ -11,8 +11,84 @@ body {
   align-items: center;
 }
 
-#calculator {
-  width: 50px;
-  height: 50px;
+.calculator {
   background: white;
+  padding: 10px;
+  border-radius: 10px;
+
+  .button-bank {
+    width: 350px;
+    height: 350px;
+    border-spacing: 5px;
+
+    td {
+      padding: 0;
+      border-radius: 5px;
+      background-color: rgb(189, 189, 189);
+
+      &:hover {
+        background-color: rgb(224, 224, 224);
+      }
+
+      &.clear {
+        background-color: #693b39;
+        color: white;
+
+        &:hover {
+          background-color: #965754;
+        }
+      }
+
+      &.operator {
+        background-color: rgb(122, 122, 122);
+
+        &:hover {
+          background-color: rgb(173, 173, 173);
+        }
+      }
+
+      &.equals {
+        background-color: rgb(52, 52, 122);
+        color: white;
+
+        &:hover {
+          background-color: rgb(71, 71, 167);
+        }
+      }
+    }
+
+    .button {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  #screen {
+    background-color: rgb(94, 190, 94);
+    color: black;
+    margin: 5px;
+    border-radius: 5px;
+
+    #display {
+      height: 40px;
+    }
+
+    #expression {
+      height: 30px;
+    }
+  }
+}
+
+.footer {
+  color: white;
+  padding: 20px;
+  text-align: center;
+
+  a {
+    text-decoration: solid;
+    color: aquamarine;
+  }
 }

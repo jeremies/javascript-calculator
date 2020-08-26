@@ -1,0 +1,25 @@
+{
+  "name": "javascript-calculator",
+  "version": "1.0.0",
+  "description": "Here is the statement of the exercise:",
+  "main": "calculator.js",
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-react-app": "^3.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeremies/javascript-calculator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jeremies/javascript-calculator/issues"
+  },
+  "homepage": "https://github.com/jeremies/javascript-calculator#readme"
+}

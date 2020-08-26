@@ -7,6 +7,6 @@ Here is the statement of the exercise:
 ### Made using
 
 - HTML5
-- CSS3
+- SASS
 - jQuery
 - React
