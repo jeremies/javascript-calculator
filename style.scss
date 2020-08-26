@@ -63,6 +63,7 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
+      cursor: pointer;
     }
   }
 
@@ -73,14 +74,18 @@ body {
     border-radius: 5px;
 
     #display {
-      height: 40px;
-      font-size: 30px;
+      font-size: 23px;
       text-align: right;
-      padding: 0 5px;
+      padding: 0 5px 5px 5px;
     }
 
     #expression {
-      height: 30px;
+      width: 330px;
+      min-height: 20px;
+      padding: 5px;
+      text-align: right;
+      color: #a521ad;
+      overflow-wrap: break-word;
     }
   }
 }

@@ -52,7 +52,7 @@ var ClearButton = function (_React$Component2) {
     value: function render() {
       return React.createElement(
         "div",
-        { id: "clear", "class": "button" },
+        { id: "clear", "class": "button", onClick: this.props.onClick },
         "AC"
       );
     }
@@ -75,7 +75,7 @@ var DecimalButton = function (_React$Component3) {
     value: function render() {
       return React.createElement(
         "div",
-        { id: "decimal", "class": "button" },
+        { id: "decimal", "class": "button", onClick: this.props.onClick },
         "."
       );
     }
@@ -98,7 +98,7 @@ var EqualsButton = function (_React$Component4) {
     value: function render() {
       return React.createElement(
         "div",
-        { id: "equals", "class": "button" },
+        { id: "equals", "class": "button", onClick: this.props.onClick },
         "="
       );
     }
@@ -121,7 +121,12 @@ var OperatorButton = function (_React$Component5) {
     value: function render() {
       return React.createElement(
         "div",
-        { id: this.props.id, "class": "button" },
+        {
+          id: this.props.id,
+          operator: this.props.operator,
+          "class": "button",
+          onClick: this.props.onClick
+        },
         this.props.operator
       );
     }
@@ -144,7 +149,12 @@ var NumberButton = function (_React$Component6) {
     value: function render() {
       return React.createElement(
         "div",
-        { id: this.props.id, "class": "button" },
+        {
+          id: this.props.id,
+          number: this.props.number,
+          "class": "button",
+          onClick: this.props.onClick
+        },
         this.props.number
       );
     }
@@ -174,17 +184,25 @@ var ButtonBank = function (_React$Component7) {
           React.createElement(
             "td",
             { "class": "clear", colspan: "2" },
-            React.createElement(ClearButton, null)
+            React.createElement(ClearButton, { onClick: this.props.onClearClick })
           ),
           React.createElement(
             "td",
             { "class": "operator" },
-            React.createElement(OperatorButton, { id: "divide", operator: "/" })
+            React.createElement(OperatorButton, {
+              id: "divide",
+              operator: "/",
+              onClick: this.props.onOperatorClick
+            })
           ),
           React.createElement(
             "td",
             { "class": "operator" },
-            React.createElement(OperatorButton, { id: "multiply", operator: "x" })
+            React.createElement(OperatorButton, {
+              id: "multiply",
+              operator: "x",
+              onClick: this.props.onOperatorClick
+            })
           )
         ),
         React.createElement(
@@ -193,22 +211,38 @@ var ButtonBank = function (_React$Component7) {
           React.createElement(
             "td",
             null,
-            React.createElement(NumberButton, { id: "seven", number: "7" })
+            React.createElement(NumberButton, {
+              id: "seven",
+              number: "7",
+              onClick: this.props.onNumberClick
+            })
           ),
           React.createElement(
             "td",
             null,
-            React.createElement(NumberButton, { id: "eight", number: "8" })
+            React.createElement(NumberButton, {
+              id: "eight",
+              number: "8",
+              onClick: this.props.onNumberClick
+            })
           ),
           React.createElement(
             "td",
             null,
-            React.createElement(NumberButton, { id: "nine", number: "9" })
+            React.createElement(NumberButton, {
+              id: "nine",
+              number: "9",
+              onClick: this.props.onNumberClick
+            })
           ),
           React.createElement(
             "td",
             { "class": "operator" },
-            React.createElement(OperatorButton, { id: "subtract", operator: "-" })
+            React.createElement(OperatorButton, {
+              id: "subtract",
+              operator: "-",
+              onClick: this.props.onOperatorClick
+            })
           )
         ),
         React.createElement(
@@ -217,22 +251,38 @@ var ButtonBank = function (_React$Component7) {
           React.createElement(
             "td",
             null,
-            React.createElement(NumberButton, { id: "four", number: "4" })
+            React.createElement(NumberButton, {
+              id: "four",
+              number: "4",
+              onClick: this.props.onNumberClick
+            })
           ),
           React.createElement(
             "td",
             null,
-            React.createElement(NumberButton, { id: "five", number: "5" })
+            React.createElement(NumberButton, {
+              id: "five",
+              number: "5",
+              onClick: this.props.onNumberClick
+            })
           ),
           React.createElement(
             "td",
             null,
-            React.createElement(NumberButton, { id: "six", number: "6" })
+            React.createElement(NumberButton, {
+              id: "six",
+              number: "6",
+              onClick: this.props.onNumberClick
+            })
           ),
           React.createElement(
             "td",
             { "class": "operator" },
-            React.createElement(OperatorButton, { id: "add", operator: "+" })
+            React.createElement(OperatorButton, {
+              id: "add",
+              operator: "+",
+              onClick: this.props.onOperatorClick
+            })
           )
         ),
         React.createElement(
@@ -241,22 +291,34 @@ var ButtonBank = function (_React$Component7) {
           React.createElement(
             "td",
             null,
-            React.createElement(NumberButton, { id: "one", number: "1" })
+            React.createElement(NumberButton, {
+              id: "one",
+              number: "1",
+              onClick: this.props.onNumberClick
+            })
           ),
           React.createElement(
             "td",
             null,
-            React.createElement(NumberButton, { id: "two", number: "2" })
+            React.createElement(NumberButton, {
+              id: "two",
+              number: "2",
+              onClick: this.props.onNumberClick
+            })
           ),
           React.createElement(
             "td",
             null,
-            React.createElement(NumberButton, { id: "three", number: "3" })
+            React.createElement(NumberButton, {
+              id: "three",
+              number: "3",
+              onClick: this.props.onNumberClick
+            })
           ),
           React.createElement(
             "td",
             { "class": "equals", rowspan: "2" },
-            React.createElement(EqualsButton, null)
+            React.createElement(EqualsButton, { onClick: this.props.onEqualsClick })
           )
         ),
         React.createElement(
@@ -265,12 +327,16 @@ var ButtonBank = function (_React$Component7) {
           React.createElement(
             "td",
             { colspan: "2" },
-            React.createElement(NumberButton, { id: "zero", number: "0" })
+            React.createElement(NumberButton, {
+              id: "zero",
+              number: "0",
+              onClick: this.props.onNumberClick
+            })
           ),
           React.createElement(
             "td",
             null,
-            React.createElement(DecimalButton, null)
+            React.createElement(DecimalButton, { onClick: this.props.onDecimalClick })
           )
         )
       );
@@ -289,10 +355,117 @@ var Calculator = function (_React$Component8) {
     var _this8 = _possibleConstructorReturn(this, (Calculator.__proto__ || Object.getPrototypeOf(Calculator)).call(this, props));
 
     _this8.state = { display: "0", expression: "" };
+    _this8.onNumberClick = _this8.onNumberClick.bind(_this8);
+    _this8.onClearClick = _this8.onClearClick.bind(_this8);
+    _this8.onOperatorClick = _this8.onOperatorClick.bind(_this8);
+    _this8.onEqualsClick = _this8.onEqualsClick.bind(_this8);
+    _this8.onDecimalClick = _this8.onDecimalClick.bind(_this8);
     return _this8;
   }
 
   _createClass(Calculator, [{
+    key: "onNumberClick",
+    value: function onNumberClick(e) {
+      var number = $(e.target).attr("number");
+      this.setState(function (state) {
+        debugger;
+        var display = state.display;
+        if (state.expression.includes("=") || state.display == "0" || isNaN(state.display)) {
+          display = number;
+        } else {
+          display += number;
+        }
+        var expression = state.expression;
+        if (state.expression.includes("=") || state.expression == "0") {
+          expression = number;
+        } else if (number != 0 || state.display != "0") {
+          expression += number;
+        }
+        return { display: display, expression: expression };
+      });
+    }
+  }, {
+    key: "onClearClick",
+    value: function onClearClick() {
+      this.setState({
+        display: "0",
+        expression: ""
+      });
+    }
+  }, {
+    key: "isOperator",
+    value: function isOperator(char) {
+      return ["+", "-", "x", "/"].includes(char);
+    }
+  }, {
+    key: "deleteTrailingOperators",
+    value: function deleteTrailingOperators(expression) {
+      return expression.replace(/[x\-+/]+$/, "");
+    }
+  }, {
+    key: "onOperatorClick",
+    value: function onOperatorClick(e) {
+      var _this9 = this;
+
+      var operator = $(e.target).attr("operator");
+
+      this.setState(function (state) {
+        var lastChar = state.display.slice(-1);
+        if (_this9.isOperator(lastChar) && (operator != "-" || lastChar == "-")) {
+          if (operator == "-" && lastChar == "-") {
+            return {};
+          }
+          return {
+            display: operator,
+            expression: _this9.deleteTrailingOperators(state.expression) + operator
+          };
+        }
+        return {
+          display: operator,
+          expression: (state.expression.includes("=") ? state.display : state.expression) + operator
+        };
+      });
+    }
+  }, {
+    key: "onEqualsClick",
+    value: function onEqualsClick(e) {
+      var _this10 = this;
+
+      if (this.state.expression.includes("=")) {
+        return;
+      }
+
+      this.setState(function (state) {
+        var expression = _this10.deleteTrailingOperators(state.expression);
+        var result = eval(expression.replace(/x/g, "*"));
+
+        return {
+          display: String(result),
+          expression: expression + "=" + result
+        };
+      });
+    }
+  }, {
+    key: "onDecimalClick",
+    value: function onDecimalClick(e) {
+      this.setState(function (state) {
+        var display = state.display;
+        var expression = state.expression;
+        if (state.expression.includes("=")) {
+          display = "0.";
+          expression = "0.";
+        } else if (isNaN(state.display)) {
+          display = "0.";
+          expression += "0.";
+        } else if (!state.display.includes(".")) {
+          display += ".";
+          expression += ".";
+        }
+
+        return { display: display, expression: expression };
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       return React.createElement(
@@ -305,7 +478,13 @@ var Calculator = function (_React$Component8) {
             display: this.state.display,
             expression: this.state.expression
           }),
-          React.createElement(ButtonBank, null)
+          React.createElement(ButtonBank, {
+            onNumberClick: this.onNumberClick,
+            onClearClick: this.onClearClick,
+            onOperatorClick: this.onOperatorClick,
+            onEqualsClick: this.onEqualsClick,
+            onDecimalClick: this.onDecimalClick
+          })
         ),
         React.createElement(
           "div",
